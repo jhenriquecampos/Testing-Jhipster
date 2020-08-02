@@ -19,6 +19,7 @@ import { ErrorHandlerInterceptor } from 'app/blocks/interceptor/errorhandler.int
 import { NotificationInterceptor } from 'app/blocks/interceptor/notification.interceptor';
 
 import { fontAwesomeIcons } from './icons/font-awesome-icons';
+import { fontAwesomeRegularIcons } from './icons/font-awesome-regular-icons';
 
 @NgModule({
   imports: [
@@ -79,6 +80,7 @@ export class TestCoreModule {
   constructor(iconLibrary: FaIconLibrary, dpConfig: NgbDatepickerConfig, languageService: JhiLanguageService) {
     registerLocaleData(locale);
     iconLibrary.addIcons(...fontAwesomeIcons);
+    iconLibrary.addIcons(...fontAwesomeRegularIcons);
     dpConfig.minDate = { year: moment().year() - 100, month: 1, day: 1 };
     languageService.init();
   }
